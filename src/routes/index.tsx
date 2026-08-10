@@ -1,24 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Github, Instagram, Linkedin, Sparkles } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { ProfileHeader } from "@/components/ProfileHeader";
+import { LinkButton, LinkStack, SocialLink } from "@/components/LinkButton";
+
+const title = "Shlok Manjrekar — CS Student & Developer";
+const description =
+  "Computer Science student who likes building things, experimenting with code, and learning along the way. Links to VibeCode projects, Instagram, LinkedIn and GitHub.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="page-aura flex min-h-screen items-center justify-center px-[5vw] py-16">
+      <div className="w-full max-w-[600px]">
+        <ProfileHeader />
+
+        <LinkStack>
+          <LinkButton
+            to="/vibecode"
+            icon={Sparkles}
+            label="VibeCode"
+            hint="Projects & experiments"
+            delay={180}
+          />
+          <SocialLink
+            href="https://www.instagram.com/shlokkmanjrekarr"
+            icon={Instagram}
+            label="Instagram"
+            hint="@shlokkmanjrekarr"
+            delay={240}
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/shlok-manjrekar-810447383"
+            icon={Linkedin}
+            label="LinkedIn"
+            hint="Let's connect"
+            delay={300}
+          />
+          <SocialLink
+            href="https://github.com/shlokmanjrekar7-coder"
+            icon={Github}
+            label="GitHub"
+            hint="Code & repositories"
+            delay={360}
+          />
+        </LinkStack>
+      </div>
+    </main>
   );
 }
