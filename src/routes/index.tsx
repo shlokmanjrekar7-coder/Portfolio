@@ -37,14 +37,14 @@ function Index() {
             delay={180}
           />
           <SocialLink
-            href="https://www.instagram.com/shlokkmanjrekarr"
+            href="https://www.instagram.com/shlokkmanjrekarr/"
             icon={Instagram}
             label="Instagram"
             hint="@shlokkmanjrekarr"
             delay={240}
           />
           <SocialLink
-            href="https://www.linkedin.com/in/shlok-manjrekar-810447383"
+            href="https://www.linkedin.com/in/shlok-manjrekar-810447383/"
             icon={Linkedin}
             label="LinkedIn"
             hint="Let's connect"
