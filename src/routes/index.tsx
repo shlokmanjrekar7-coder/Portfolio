@@ -32,7 +32,7 @@ function Index() {
           <LinkButton
             to="/vibecode"
             icon={Sparkles}
-            label="VibeCode"
+            label="My projects"
             hint="Projects & experiments"
             delay={180}
           />
