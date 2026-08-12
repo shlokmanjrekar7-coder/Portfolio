@@ -1,11 +1,14 @@
 export type Project = {
+  id: string;
   name: string;
   description: string;
   /** Image URL or an imported asset from src/assets */
   thumbnail?: string;
-  liveUrl?: string;
+  technologies?: string[];
   githubUrl?: string;
-  tags?: string[];
+  liveDemoUrl?: string;
+  /** Set false to show "Live Demo — Coming Soon" (disabled). */
+  liveDemoAvailable?: boolean;
 };
 
 /**
@@ -13,12 +16,24 @@ export type Project = {
  *
  * Example:
  * {
+ *   id: "my-app",
  *   name: "My App",
  *   description: "A short description of what it does.",
  *   thumbnail: "https://example.com/shot.png",
- *   liveUrl: "https://myapp.com",
+ *   technologies: ["React", "TypeScript"],
  *   githubUrl: "https://github.com/shlokmanjrekar7-coder/my-app",
- *   tags: ["React", "TypeScript"],
+ *   liveDemoUrl: "https://myapp.com",
+ *   liveDemoAvailable: true,
  * },
  */
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    id: "urban-threads",
+    name: "Urban Threads",
+    description: "A fashion and clothing website built as a web development project.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/shlokmanjrekar7-coder/Urban-threads",
+    liveDemoUrl: "",
+    liveDemoAvailable: false,
+  },
+];

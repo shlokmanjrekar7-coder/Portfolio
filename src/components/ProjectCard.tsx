@@ -2,6 +2,7 @@ import { ArrowUpRight, Code2, Image as ImageIcon } from "lucide-react";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const liveDemoAvailable = project.liveDemoAvailable && project.liveDemoUrl;
   return (
     <article className="surface-card lift-on-hover flex flex-col overflow-hidden rounded-2xl">
       <div className="aspect-video w-full overflow-hidden bg-muted">
@@ -23,9 +24,9 @@ export function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-lg font-semibold">{project.name}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
 
-        {project.tags?.length ? (
+        {project.technologies?.length ? (
           <ul className="mt-4 flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
+            {project.technologies.map((tag) => (
               <li
                 key={tag}
                 className="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground"
@@ -37,16 +38,23 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : null}
 
         <div className="mt-5 flex flex-wrap gap-4 pt-1 text-sm font-medium">
-          {project.liveUrl ? (
+          {liveDemoAvailable ? (
             <a
-              href={project.liveUrl}
+              href={project.liveDemoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-primary transition-colors hover:text-accent"
             >
               Live Demo <ArrowUpRight className="size-4" aria-hidden />
             </a>
-          ) : null}
+          ) : (
+            <span
+              aria-disabled="true"
+              className="inline-flex cursor-not-allowed items-center gap-1 text-muted-foreground/60"
+            >
+              Live Demo — Coming Soon
+            </span>
+          )}
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
