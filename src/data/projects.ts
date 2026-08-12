@@ -26,11 +26,14 @@ export type Project = {
  *   liveDemoAvailable: true,
  * },
  */
+import urbanThreads from "@/assets/urban-threads.jpg";
+
 export const projects: Project[] = [
   {
     id: "urban-threads",
     name: "Urban Threads",
-    description: "A fashion and clothing website built as a web development project.",
+    description: "Fashion and clothing website built as a web development project.",
+    thumbnail: urbanThreads,
     technologies: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/shlokmanjrekar7-coder/Urban-threads",
     liveDemoUrl: "https://shlokmanjrekar7-coder.github.io/Urban-threads/",
