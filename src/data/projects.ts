@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: "A fashion and clothing website built as a web development project.",
     technologies: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/shlokmanjrekar7-coder/Urban-threads",
-    liveDemoUrl: "",
-    liveDemoAvailable: false,
+    liveDemoUrl: "https://shlokmanjrekar7-coder.github.io/Urban-threads/",
+    liveDemoAvailable: true,
   },
 ];
