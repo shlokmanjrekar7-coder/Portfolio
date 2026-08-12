@@ -25,7 +25,7 @@ export const Route = createFileRoute("/vibecode")({
 
 function VibeCode() {
   return (
-    <main className="projects-dark projects-aura min-h-screen px-[5vw] py-8 sm:py-12">
+    <main className="page-aura min-h-screen px-[5vw] py-8 sm:py-12">
       <div className="mx-auto w-full max-w-5xl">
         <Link
           to="/"
