@@ -3,10 +3,11 @@ import { ArrowLeft } from "lucide-react";
 
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { projects } from "@/data/projects";
+import avatar from "@/assets/profile-placeholder.jpg";
 
 const title = "My projects — Shlok Manjrekar";
 const description =
-  "Things I've built, experiments I've tried, and projects I'm working on — the project portfolio of Shlok Manjrekar.";
+  "Small, creative, and useful web projects built by Shlok Manjrekar — a project showcase.";
 
 export const Route = createFileRoute("/vibecode")({
   head: () => ({
@@ -24,26 +25,30 @@ export const Route = createFileRoute("/vibecode")({
 
 function VibeCode() {
   return (
-    <main className="page-aura min-h-screen px-[5vw] py-14">
-      <div className="mx-auto w-full max-w-4xl">
+    <main className="projects-dark projects-aura min-h-screen px-[5vw] py-8 sm:py-12">
+      <div className="mx-auto w-full max-w-5xl">
         <Link
           to="/"
-          className="animate-rise surface-card lift-on-hover inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+          className="animate-rise surface-card lift-on-hover inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium sm:text-sm"
         >
           <ArrowLeft className="size-4" aria-hidden /> Back
         </Link>
 
-        <div className="mt-10">
-          <h1 className="animate-rise text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="text-gradient-brand">My projects</span>
+        <header className="animate-rise mt-8 flex flex-col items-center text-center">
+          <img
+            src={avatar}
+            alt="Shlok Manjrekar"
+            width={96}
+            height={96}
+            className="size-16 rounded-full border border-border object-cover shadow-[var(--shadow-lift)] sm:size-20"
+          />
+          <h1 className="mt-3 text-xl font-bold uppercase tracking-[0.18em] sm:text-2xl">
+            <span className="text-gradient-brand">Shlok Manjrekar</span>
           </h1>
-          <p
-            className="animate-rise mt-3 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base"
-            style={{ animationDelay: "80ms" }}
-          >
-            Things I've built, experiments I've tried, and projects I'm working on.
+          <p className="mt-2 max-w-sm text-balance text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            Building small, creative, and useful web projects.
           </p>
-        </div>
+        </header>
 
         <ProjectGrid projects={projects} />
       </div>
