@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { projects } from "@/data/projects";
 
-const title = "VibeCode — Projects by Shlok Manjrekar";
+const title = "My projects — Shlok Manjrekar";
 const description =
   "Things I've built, experiments I've tried, and projects I'm working on — the project portfolio of Shlok Manjrekar.";
 
