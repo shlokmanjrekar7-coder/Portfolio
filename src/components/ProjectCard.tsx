@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
             loading="lazy"
             width={1024}
             height={640}
-            className="size-full object-cover transition-transform duration-500 hover:scale-105"
+            className="size-full bg-card object-contain p-4 transition-transform duration-500 hover:scale-105"
           />
         ) : (
           <div className="grid size-full place-items-center text-muted-foreground">
