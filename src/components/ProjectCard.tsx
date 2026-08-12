@@ -1,35 +1,40 @@
-import { ArrowUpRight, Code2, Image as ImageIcon } from "lucide-react";
+import { ArrowUpRight, Image as ImageIcon } from "lucide-react";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   const liveDemoAvailable = project.liveDemoAvailable && project.liveDemoUrl;
+
   return (
     <article className="surface-card lift-on-hover flex flex-col overflow-hidden rounded-2xl">
-      <div className="aspect-video w-full overflow-hidden bg-muted">
+      <div className="aspect-[16/10] w-full overflow-hidden bg-muted">
         {project.thumbnail ? (
           <img
             src={project.thumbnail}
-            alt={`${project.name} screenshot`}
+            alt={`${project.name} preview`}
             loading="lazy"
-            className="size-full object-cover"
+            width={1024}
+            height={640}
+            className="size-full object-cover transition-transform duration-500 hover:scale-105"
           />
         ) : (
           <div className="grid size-full place-items-center text-muted-foreground">
-            <ImageIcon className="size-7" aria-hidden />
+            <ImageIcon className="size-6" aria-hidden />
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-lg font-semibold">{project.name}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+      <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
+        <h3 className="truncate text-sm font-semibold sm:text-base">{project.name}</h3>
+        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+          {project.description}
+        </p>
 
         {project.technologies?.length ? (
-          <ul className="mt-4 flex flex-wrap gap-2">
+          <ul className="flex flex-wrap gap-1.5">
             {project.technologies.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                className="rounded-full border border-border bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
               >
                 {tag}
               </li>
@@ -37,15 +42,15 @@ export function ProjectCard({ project }: { project: Project }) {
           </ul>
         ) : null}
 
-        <div className="mt-5 flex flex-wrap gap-4 pt-1 text-sm font-medium">
+        <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 pt-1 text-xs font-medium">
           {liveDemoAvailable ? (
             <a
               href={project.liveDemoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary transition-colors hover:text-accent"
+              className="inline-flex items-center gap-0.5 text-primary transition-colors hover:text-accent"
             >
-              Live Demo <ArrowUpRight className="size-4" aria-hidden />
+              Live Demo <ArrowUpRight className="size-3.5" aria-hidden />
             </a>
           ) : (
             <span
@@ -55,17 +60,15 @@ export function ProjectCard({ project }: { project: Project }) {
               Live Demo — Coming Soon
             </span>
           )}
-          {project.githubUrl ? (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Code2 className="size-4" aria-hidden /> GitHub
-              <ArrowUpRight className="size-4" aria-hidden />
-            </a>
-          ) : null}
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-0.5 text-muted-foreground transition-colors hover:text-foreground"
+            hidden={!project.githubUrl}
+          >
+            GitHub <ArrowUpRight className="size-3.5" aria-hidden />
+          </a>
         </div>
       </div>
     </article>
