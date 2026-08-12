@@ -35,7 +35,7 @@ function VibeCode() {
 
         <div className="mt-10">
           <h1 className="animate-rise text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="text-gradient-brand">VibeCode</span>
+            <span className="text-gradient-brand">My projects</span>
           </h1>
           <p
             className="animate-rise mt-3 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base"
