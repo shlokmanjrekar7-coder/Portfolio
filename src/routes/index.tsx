@@ -6,7 +6,7 @@ import { LinkButton, LinkStack, SocialLink } from "@/components/LinkButton";
 
 const title = "Shlok Manjrekar — CS Student & Developer";
 const description =
-  "Computer Science student who likes building things, experimenting with code, and learning along the way. Links to VibeCode projects, Instagram, LinkedIn and GitHub.";
+  "Computer Science student who likes building things, experimenting with code, and learning along the way. Links to my projects, Instagram, LinkedIn and GitHub.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
