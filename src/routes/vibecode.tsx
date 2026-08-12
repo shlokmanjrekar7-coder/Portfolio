@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { projects } from "@/data/projects";
 
-const title = "VibeCode — Projects by Shlok Manjrekar";
+const title = "My projects — Shlok Manjrekar";
 const description =
   "Things I've built, experiments I've tried, and projects I'm working on — the project portfolio of Shlok Manjrekar.";
 
@@ -35,7 +35,7 @@ function VibeCode() {
 
         <div className="mt-10">
           <h1 className="animate-rise text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="text-gradient-brand">VibeCode</span>
+            <span className="text-gradient-brand">My projects</span>
           </h1>
           <p
             className="animate-rise mt-3 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base"
